@@ -57,9 +57,21 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js';  // Included with Angular CLI.
-
+import 'zone.js'; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+(window as any).global = window;
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+(window as any).process = require('process/browser');
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+(window as any).global.Buffer =
+  (window as any).global.Buffer || require('buffer').Buffer;
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+(window as any).global.util =
+  (window as any).global.util || require('util').util;
