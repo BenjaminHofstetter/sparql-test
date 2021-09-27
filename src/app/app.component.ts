@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
         ?option <http://schema.org/name> ?value .
         
       }
-    } ORDER BY ?value # LIMIT 802
+    } ORDER BY ?value  
         
         
     `;
