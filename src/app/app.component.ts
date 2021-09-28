@@ -10,6 +10,8 @@ import ParsingClient from 'sparql-http-client/ParsingClient';
 export class AppComponent implements OnInit {
   title = 'sparql-test';
 
+  constructor() {}
+
   ngOnInit(): void {
     const client = new ParsingClient({
       endpointUrl: 'https://int.lindas.admin.ch/query',
@@ -41,13 +43,13 @@ export class AppComponent implements OnInit {
         ?option <http://schema.org/name> ?value .
         
       }
-    } ORDER BY ?value  
+    } ORDER BY ?value LIMIT 926
         
         
     `;
 
     client.query.select(query).then(
-      (result) => console.log(result),
+      (result) => console.log('in zone:', result),
       (err) => console.log(err)
     );
   }
